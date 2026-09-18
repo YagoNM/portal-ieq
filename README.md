@@ -1,58 +1,169 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Portal IEQ
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplicação web desenvolvida para centralizar informações públicas e auxiliar na gestão interna da **Igreja do Evangelho Quadrangular Canto do Mar**.
 
-## About Laravel
+O projeto está em desenvolvimento e utiliza Laravel para organizar membros, células, redes, lideranças e outros processos da igreja.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Objetivo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+O Portal IEQ pretende reunir em uma única aplicação:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Informações públicas da igreja;
+- Programação de cultos e eventos;
+- Transmissões ao vivo;
+- Cadastro e gerenciamento de membros;
+- Organização de células e redes;
+- Controle de líderes, supervisores e pastores;
+- Relatórios conforme o nível de acesso;
+- Pedidos de oração, visitas e assistência social.
 
-## Learning Laravel
+## Funcionalidades atuais
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Estrutura inicial da aplicação;
+- Modelagem de membros, células e redes;
+- Estrutura de papéis e permissões;
+- Página inicial pública responsiva;
+- Área de transmissão e programação;
+- Testes automatizados iniciais.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+> O projeto ainda está em desenvolvimento. Algumas informações e funcionalidades da interface são provisórias.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Hierarquia da aplicação
 
-## Agentic Development
+A estrutura organizacional segue esta ordem:
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+1. Pastores;
+2. Supervisores;
+3. Líderes;
+4. Líderes em treinamento (LETs);
+5. Membros.
+
+Todos possuem cadastro como membro. Papéis e permissões determinam quais áreas e informações cada pessoa pode acessar.
+
+## Tecnologias
+
+- PHP 8.3+
+- Laravel 13
+- Laravel Sail
+- Docker
+- MySQL
+- Redis
+- Blade
+- Tailwind CSS 4
+- JavaScript
+- Vite
+- PHPUnit
+
+## Requisitos
+
+Antes de iniciar, tenha instalado:
+
+- Git;
+- Docker;
+- Docker Compose.
+
+## Instalação
+
+Clone o repositório:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/YagoNM/portal-ieq.git
+cd portal-ieq
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Instale as dependências do PHP utilizando o container do Laravel Sail:
 
-## Contributing
+```bash
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php85-composer:latest \
+    composer install --ignore-platform-reqs
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Crie o arquivo de configuração:
 
-## Code of Conduct
+```bash
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Inicie os containers:
 
-## Security Vulnerabilities
+```bash
+./vendor/bin/sail up -d
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Gere a chave da aplicação:
 
-## License
+```bash
+./vendor/bin/sail artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Execute as migrations:
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+Instale as dependências do front-end:
+
+```bash
+./vendor/bin/sail npm install
+```
+
+Inicie o Vite:
+
+```bash
+./vendor/bin/sail npm run dev
+```
+
+A aplicação estará disponível em [http://localhost](http://localhost).
+
+## Testes
+
+Execute os testes automatizados:
+
+```bash
+./vendor/bin/sail artisan test
+```
+
+Valide a compilação do front-end:
+
+```bash
+./vendor/bin/sail npm run build
+```
+
+## Roadmap
+
+Entre as funcionalidades planejadas estão:
+
+- Autenticação e Área do Membro;
+- Cadastro completo de membros;
+- Gerenciamento de células e redes;
+- Gestão de ministérios;
+- Dashboard por nível de acesso;
+- Relatórios de células e redes;
+- Pedidos de visita;
+- Pedidos de oração;
+- Assistência social e solicitação de cesta básica;
+- Cadastro de dízimos;
+- Agenda de cultos e eventos;
+- Aplicação instalável como PWA.
+
+## Status
+
+Projeto em desenvolvimento.
+
+A primeira versão da página pública está disponível na branch `feat/home-publica`.
+
+## Autor
+
+Desenvolvido por **Yago Santos**.
+
+- GitHub: [YagoNM](https://github.com/YagoNM)
+- LinkedIn: [linkedin.com/in/snmyago](https://www.linkedin.com/in/snmyago)
+
+## Licença
+
+Este projeto ainda não possui uma licença pública definida.
