@@ -33,6 +33,7 @@
 
             <nav class="main-nav" id="menu-principal" aria-label="Navegação principal" data-menu>
                 <a class="nav-link is-active" href="#inicio">Início</a>
+                <a class="nav-link" href="{{ route('sobre') }}">Sobre nós</a>
                 <a class="nav-link" href="#cultos">Cultos</a>
                 <a class="nav-link" href="#ao-vivo">Ao vivo</a>
                 <a class="button button-primary button-small" href="#ao-vivo">
