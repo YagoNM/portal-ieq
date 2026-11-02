@@ -12,6 +12,24 @@ As ações “Conheça nossa programação” e “Voltar para o início” perm
 
 O texto descreve o propósito do sistema. Não constitui uma declaração institucional oficial de missão, visão ou valores. Não foram incluídos histórico, endereço, horários ou nomes de responsáveis sem confirmação. Programação, canal oficial e área do membro permanecem indicados como pendentes na interface.
 
+## Correspondência com as seções 1.1 e 1.2
+A correspondência abaixo foi elaborada com base no contexto e nos objetivos registrados na entrega S03 consultada. O relatório técnico completo com as seções 1.1 e 1.2 não foi localizado; a equivalência precisa ser conferida com sua redação final antes da entrega.
+
+| Trecho da página | Seção do relatório | Relação proposta |
+| --- | --- | --- |
+| “Quem somos”, parágrafo 1 | 1.1 — Contexto e Motivação | Identifica a IEQ Canto do Mar e o domínio da aplicação. |
+| “Quem somos”, parágrafo 2 | 1.1 — Contexto e Motivação | Explica a necessidade de um ponto central para consultar informações. |
+| “Quem somos”, parágrafo 3 | 1.2 — Objetivos do Projeto | Apresenta o portal como meio de organizar informações e facilitar o acompanhamento da programação. |
+| Missão do sistema e três cartões de propósito | 1.2 — Objetivos do Projeto | Traduz centralização, acesso à programação e facilidade de uso em benefícios para o público. |
+
+A descrição da dificuldade de consulta é uma síntese do problema de centralização documentado na S03; não representa uma pesquisa de campo adicional.
+
+## Reflexão — tradução do relatório para a página
+Ao transformar o contexto técnico em “Sobre nós”, destacamos o significado do projeto para as pessoas.  
+O problema e os objetivos passam a ser apresentados como necessidades e benefícios do cotidiano.  
+Escolhemos uma linguagem simples e acolhedora, adequada a membros e visitantes da igreja.  
+Evitamos termos de programação e promessas de funcionalidades ainda não disponíveis.
+
 ## Implementação e fluxo
 - Stack: Laravel, Blade, CSS no projeto Tailwind e JavaScript com Vite.
 - Página: `resources/views/sobre.blade.php`.
