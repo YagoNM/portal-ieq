@@ -65,7 +65,8 @@
                 </div>
                 <div class="about-text">
                     <p>A Igreja do Evangelho Quadrangular Canto do Mar é a comunidade cristã para a qual o Portal IEQ está sendo desenvolvido. Cultos, momentos de comunhão e a participação dos membros fazem parte do contexto que orienta o projeto.</p>
-                    <p>O portal é um ponto de encontro digital para membros e visitantes conhecerem a igreja e encontrarem informações sobre sua programação e suas transmissões.</p>
+                    <p>O cenário que motiva o projeto é a necessidade de reunir as informações da igreja em um lugar de fácil consulta. Sem esse ponto central, encontrar a programação dos cultos e saber como acompanhar as transmissões pode exigir a busca por orientações em diferentes momentos.</p>
+                    <p>Por isso, o Portal IEQ está sendo desenvolvido como um ponto de encontro digital para membros e visitantes. O sistema busca organizar essas informações e tornar mais simples conhecer a igreja e acompanhar sua programação.</p>
                 </div>
             </div>
         </section>
@@ -77,7 +78,7 @@
                         <p class="eyebrow"><span></span> Nosso propósito digital</p>
                         <h2 id="purpose-title">Por que o Portal IEQ existe?</h2>
                     </div>
-                    <p>Facilitar o acesso à informação e aproximar as pessoas da vida da igreja.</p>
+                    <p>Nossa missão como sistema é centralizar as informações da igreja, facilitar o acesso à programação e aproximar membros e visitantes da comunidade.</p>
                 </div>
                 <div class="schedule-grid">
                     <article class="schedule-card">
